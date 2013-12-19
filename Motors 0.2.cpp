@@ -13,13 +13,14 @@ void setup()
   pinMode(SpeedOfLeftEngine,OUTPUT);
   pinMode(DirectionOfLeftEngine,OUTPUT);
 }
-void loop(){
-if (digitalRead(ColourLineSensor)== LOW)
+void loop()
 {
-  digitalWrite(PowerLineSensor,HIGH);
-  digitalWrite(DirectionOfRightEngine,HIGH);
-  digitalWrite(DirectionOfLeftEngine,HIGH);
-  analogWrite(SpeedOfRightEngine,127);
-  analogWrite(SpeedOfLeftEngine,127);
-}
+  if (digitalRead(ColourLineSensor)== LOW)
+  {
+    digitalWrite(PowerLineSensor,HIGH);
+    digitalWrite(DirectionOfRightEngine,HIGH);
+    digitalWrite(DirectionOfLeftEngine,HIGH);
+    analogWrite(SpeedOfRightEngine,127);
+    analogWrite(SpeedOfLeftEngine,127);
+  }
 }
