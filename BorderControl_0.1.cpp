@@ -57,7 +57,7 @@ void loop()
   
   if (flag == 1 && VOfSlow < MaxVelocity){            //ускорение ворого мотора
     VOfSlow++;                  //For only 1 point?
-  } else {
+  } else {      //Never be so.
     flag==0;
   }
   analogWrite(SpeedOfEngine[Slow],VOfSlow); 
