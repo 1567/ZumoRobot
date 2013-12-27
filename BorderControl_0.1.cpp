@@ -4,13 +4,12 @@ ColourLineSensor[0][0] = 8;
 ColourLineSensor[0][1] = 9;
 ColourLineSensor[1][0] = 10;
 ColourLineSensor[1][1] = 11;
-int PowerLineSensors=12;
+int PowerLineSensor=12;
 int DirectionOfEngine[] = {7,4};    //левый - 0, правый - 1
 int SpeedOfEngine[]={6,5};
 int MaxVelocity = 153;        //не уверен, что верно помню. Поправь, если что.
 int VOfSlow = 0;               //скорость более медленного колеса
 boolean Slow=0;                //какой из них медленнее
-
 
 
 void setup()
@@ -41,11 +40,12 @@ void loop()
   при этом колёса той стороны, с которой считали белый сигнал
   крутятся активнее для обеспечения нужного поворота.
   */
+  //We don't need to know, where the center is, you mean?
   for(boolean i=0;i<2;i++){            // перед/зад
     for(boolean j=0;j<2;j++){          // лево/право
       if (digitalRead(ColourLineSensor[i][j])== HIGH){
         digitalWrite(DirectionOfEngine[0],i);          //тут я считаю, что движение "вперёд" (так, что передние датчики - голова) - это LOW
-        digitalWrite(DirectionOfEngine[1],i);
+        digitalWrite(DirectionOfEngine[1],i);   //Is "HIGH" like "TRUE" like "1"? That is the question.
         VOfSlow = MaxVelocity/2;
         Slow = !j;                                      //какой из двигателей медленнее;
         analogWrite(SpeedOfEngine[j],MaxVelocity);      //колёса со стороны сигналящего датчика активнее
@@ -56,7 +56,7 @@ void loop()
   }
   
   if (flag == 1 && VOfSlow < MaxVelocity){            //ускорение ворого мотора
-    VOfSlow++;
+    VOfSlow++;                  //For only 1 point?
   } else {
     flag==0;
   }
