@@ -40,12 +40,12 @@ void loop()
   при этом колёса той стороны, с которой считали белый сигнал
   крутятся активнее для обеспечения нужного поворота.
   */
-  //We don't need to know, where the center is, you mean?
+  //We don't need to know, where the center is, you mean?  //Да, именно так. Но поворот устроен так, что едем мы к центру.
   for(boolean i=0;i<2;i++){            // перед/зад
     for(boolean j=0;j<2;j++){          // лево/право
       if (digitalRead(ColourLineSensor[i][j])== HIGH){
         digitalWrite(DirectionOfEngine[0],i);          //тут я считаю, что движение "вперёд" (так, что передние датчики - голова) - это LOW
-        digitalWrite(DirectionOfEngine[1],i);   //Is "HIGH" like "TRUE" like "1"? That is the question.
+        digitalWrite(DirectionOfEngine[1],i);   //Is "HIGH" like "TRUE" like "1"? That is the question.   //При digitalWrite - да. При analogWrite - нет.
         VOfSlow = MaxVelocity/2;
         Slow = !j;                                      //какой из двигателей медленнее;
         analogWrite(SpeedOfEngine[j],MaxVelocity);      //колёса со стороны сигналящего датчика активнее
@@ -56,7 +56,7 @@ void loop()
   }
   
   if (flag == 1 && VOfSlow < MaxVelocity){            //ускорение ворого мотора
-    VOfSlow++;                                 //it has to be in a cicle, doesn't it?
+    VOfSlow++;                                 //it has to be in a cicle, doesn't it?     //Нет. Скорость уведичивается тогда, когда датчики спокойны. А циклично засчёт loop'а
   } else {      
     flag==0;
   }
