@@ -56,8 +56,8 @@ void loop()
   }
   
   if (flag == 1 && VOfSlow < MaxVelocity){            //ускорение ворого мотора
-    VOfSlow++;                  //For only 1 point?
-  } else {      //Never be so.
+    VOfSlow++;                                 //it has to be in a cicle, doesn't it?
+  } else {      
     flag==0;
   }
   analogWrite(SpeedOfEngine[Slow],VOfSlow); 
