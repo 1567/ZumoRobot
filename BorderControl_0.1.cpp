@@ -66,3 +66,4 @@ void loop()
   }
   analogWrite(SpeedOfEngine[Slow],VOfSlow); 
 }
+//Все четко
