@@ -1,4 +1,3 @@
-ZumoRobot
-=========
+Ветка для различных моделей поведения робота.
 
-http://www.robotchallenge.org/fileadmin/user_upload/_temp_/RobotChallenge/Reglement/RC-PuckCollect.pdf
+И, пожалуйста, называйте модели поведения как-нибудь вразумительно, а не так как сейчас (если не влом, то имеющиеся можно переименовать).
