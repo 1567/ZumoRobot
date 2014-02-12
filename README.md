@@ -1,4 +1,3 @@
-ZumoRobot
-=========
+Ветка специально для отдельных драйверов разной перефирии.
 
-http://www.robotchallenge.org/fileadmin/user_upload/_temp_/RobotChallenge/Reglement/RC-PuckCollect.pdf
+Всякие проги контроля двигателей, датчиков etc. кидаем сюда!
